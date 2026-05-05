@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez PerfectLab : notre histoire, notre mission, notre équipe et nos valeurs. Une expertise IT locale au service des entreprises africaines.">
+  <title>À propos — PerfectLab</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231F4E79'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='55' font-weight='bold' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+  <style>
+    /* Styles spécifiques à la page À propos */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 3rem auto 0;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-border);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.5rem;
+      width: 18px;
+      height: 18px;
+      background: var(--color-accent);
+      border: 3px solid white;
+      border-radius: 50%;
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-year {
+      display: inline-block;
+      background: var(--color-primary);
+      color: white;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    .timeline-item h4 {
+      color: var(--color-primary);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item p {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+    .team-card {
+      background: var(--color-bg-alt);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+      border: 1px solid var(--color-border);
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .team-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      box-shadow: var(--shadow-md);
+    }
+    .team-card h4 {
+      color: var(--color-primary);
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+    }
+    .team-role {
+      color: var(--color-accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+    .team-desc {
+      color: var(--color-text-muted);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .value-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, var(--color-accent) 0%, #FFD166 100%);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+    .value-card h4 {
+      color: var(--color-primary);
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+    }
+    .value-card p {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .partners-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+    .partner-badge {
+      background: var(--color-bg-alt);
+      padding: 1rem 1.8rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all var(--transition);
+    }
+    .partner-badge:hover {
+      border-color: var(--color-primary-light);
+      color: var(--color-primary);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============== NAVIGATION ============== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">P</div>
+        <span><span class="logo-text">Perfect</span><span class="logo-accent">Lab</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-page="index.html">Accueil</a></li>
+        <li><a href="services.html" data-page="services.html">Services</a></li>
+        <li><a href="apropos.html" data-page="apropos.html">À propos</a></li>
+        <li><a href="contact.html" data-page="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Devis gratuit</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============== BANNER ============== -->
+  <section class="page-banner">
+    <div class="container">
+      <h1>À propos de PerfectLab</h1>
+      <p>Une expertise locale, des standards internationaux. Découvrez l'histoire, l'équipe et les valeurs qui nous animent.</p>
+      <div class="breadcrumb"><a href="index.html">Accueil</a> &nbsp;/&nbsp; À propos</div>
+    </div>
+  </section>
+
+  <!-- ============== NOTRE HISTOIRE ============== -->
+  <section>
+    <div class="container">
+      <div class="features-block fade-in">
+        <div class="features-image">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80" alt="Équipe PerfectLab en réunion" loading="lazy">
+        </div>
+        <div class="features-content">
+          <span class="section-eyebrow">Notre histoire</span>
+          <h3>Né à Lomé, pensé pour l'Afrique</h3>
+          <p>PerfectLab est né en 2018 d'un constat simple : les entreprises ouest-africaines ont besoin d'expertise IT de haut niveau, mais les grands cabinets internationaux ne comprennent ni leurs contraintes ni leurs réalités. Coupures électriques, connectivité variable, budgets limités, équipes en montée en compétence — autant de défis qu'il faut intégrer dès la conception.</p>
+          <p>En sept ans, nous sommes passés de trois fondateurs travaillant dans un open space partagé à une équipe de quinze personnes installée au cœur de Lomé, accompagnant des clients dans cinq pays de la sous-région. Notre crédo n'a jamais changé : <strong>concevoir des infrastructures qui marchent, ici, durablement</strong>.</p>
+          <ul class="features-list">
+            <li>Plus de 120 projets livrés depuis la création</li>
+            <li>5 pays couverts en Afrique de l'Ouest</li>
+            <li>15 collaborateurs certifiés Microsoft, Cisco, AWS</li>
+            <li>Membre de la Chambre de Commerce du Togo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TIMELINE ============== -->
+  <section style="background:var(--color-bg-alt)">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Étapes clés</span>
+        <h2>Notre parcours</h2>
+        <p>Sept années à grandir, apprendre, et accompagner la transformation numérique de la sous-région.</p>
+      </div>
+      <div class="timeline fade-in">
+        <div class="timeline-item">
+          <span class="timeline-year">2018</span>
+          <h4>Création de PerfectLab</h4>
+          <p>Trois ingénieurs togolais fondent PerfectLab à Lomé avec une mission claire : démocratiser l'expertise IT en Afrique de l'Ouest. Premiers clients : deux PME de Lomé.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2020</span>
+          <h4>Premières certifications</h4>
+          <p>L'équipe obtient ses premières certifications Microsoft et Cisco. Ouverture du premier bureau au boulevard du 13 Janvier. Le portefeuille atteint 25 clients.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2022</span>
+          <h4>Expansion régionale</h4>
+          <p>Premiers projets au Bénin et au Burkina Faso. Mise en place du pôle services managés avec supervision 24/7. L'équipe passe à 10 collaborateurs.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2024</span>
+          <h4>Pôle cybersécurité</h4>
+          <p>Création d'un département dédié à la cybersécurité et à la conformité, en réponse à la montée des cyber-menaces dans la région. Partenariat avec Fortinet.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2026</span>
+          <h4>Aujourd'hui</h4>
+          <p>15 collaborateurs, plus de 45 clients actifs dans 5 pays. Lancement de notre offre cloud souverain hébergé localement. Premiers pas vers la certification ISO 27001.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== MISSION & VISION ============== -->
+  <section>
+    <div class="container">
+      <div class="features-block reverse fade-in">
+        <div class="features-image">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="Travail collaboratif sur un projet IT" loading="lazy">
+        </div>
+        <div class="features-content">
+          <span class="section-eyebrow">Notre mission</span>
+          <h3>Rendre l'IT accessible et fiable</h3>
+          <p>Nous sommes convaincus que l'accès à une infrastructure numérique de qualité ne devrait pas dépendre de la taille de l'entreprise ni de son budget. Notre mission est de mettre à disposition des PME et des organisations africaines les mêmes standards techniques que les grands groupes internationaux, avec une approche pragmatique adaptée au terrain.</p>
+          <p><strong>Notre vision pour 2030</strong> : devenir la référence en infrastructure IT dans cinq pays d'Afrique de l'Ouest, en formant une génération d'ingénieurs locaux capables de relever les défis numériques de leur continent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== VALEURS ============== -->
+  <section style="background:var(--color-bg-alt)">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Nos valeurs</span>
+        <h2>Ce qui nous guide au quotidien</h2>
+        <p>Quatre principes qui orientent chacune de nos décisions, de l'avant-vente à l'exploitation.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card fade-in">
+          <div class="value-icon">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h4>Intégrité</h4>
+          <p>Nous disons ce que nous faisons et faisons ce que nous disons. Pas de promesses irréalistes, pas de coûts cachés, pas de jargon pour impressionner.</p>
+        </div>
+        <div class="value-card fade-in">
+          <div class="value-icon">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Excellence technique</h4>
+          <p>Nous investissons en permanence dans la formation et la veille technologique. Chaque livrable doit pouvoir être audité par un tiers expert sans rougir.</p>
+        </div>
+        <div class="value-card fade-in">
+          <div class="value-icon">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Proximité client</h4>
+          <p>Un interlocuteur dédié, des points réguliers, une réponse rapide. Nos clients ne sont pas des numéros de ticket mais des partenaires de long terme.</p>
+        </div>
+        <div class="value-card fade-in">
+          <div class="value-icon">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h4>Transmission</h4>
+          <p>Nous formons systématiquement les équipes de nos clients. Notre objectif n'est pas de créer une dépendance, mais de rendre nos clients autonomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== EQUIPE ============== -->
+  <section>
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">L'équipe</span>
+        <h2>Les visages derrière PerfectLab</h2>
+        <p>Une équipe pluridisciplinaire d'ingénieurs, architectes et consultants passionnés.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card fade-in">
+          <div class="team-photo">KA</div>
+          <h4>Kossi AGBEKO</h4>
+          <p class="team-role">CEO & Co-fondateur</p>
+          <p class="team-desc">15 ans d'expérience en infrastructure et architecture. Ancien consultant chez Atos, certifié Microsoft Azure Architect.</p>
+        </div>
+        <div class="team-card fade-in">
+          <div class="team-photo">AS</div>
+          <h4>Aïcha SOSSOU</h4>
+          <p class="team-role">CTO & Co-fondatrice</p>
+          <p class="team-desc">Experte en sécurité et réseaux. Diplômée de l'EPITECH, certifiée CISSP et Cisco CCNP. Pilote la stratégie technique.</p>
+        </div>
+        <div class="team-card fade-in">
+          <div class="team-photo">EM</div>
+          <h4>Emmanuel MENSAH</h4>
+          <p class="team-role">Directeur des opérations</p>
+          <p class="team-desc">Pilote la production et les services managés. Garant de la qualité de service et des SLA. Certifié ITIL Expert.</p>
+        </div>
+        <div class="team-card fade-in">
+          <div class="team-photo">FK</div>
+          <h4>Fatima KONE</h4>
+          <p class="team-role">Lead Cybersécurité</p>
+          <p class="team-desc">Responsable du pôle sécurité. Audits, tests d'intrusion, accompagnement à la mise en conformité. Ex-CERT Côte d'Ivoire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PARTENAIRES ============== -->
+  <section style="background:var(--color-bg-alt)">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Écosystème</span>
+        <h2>Nos partenaires technologiques</h2>
+        <p>Nous travaillons avec les meilleurs éditeurs et constructeurs du marché pour vous offrir des solutions éprouvées.</p>
+      </div>
+      <div class="partners-strip fade-in">
+        <div class="partner-badge">Microsoft</div>
+        <div class="partner-badge">Cisco</div>
+        <div class="partner-badge">VMware</div>
+        <div class="partner-badge">Fortinet</div>
+        <div class="partner-badge">Veeam</div>
+        <div class="partner-badge">AWS</div>
+        <div class="partner-badge">Dell EMC</div>
+        <div class="partner-badge">HP Enterprise</div>
+        <div class="partner-badge">Ubuntu</div>
+        <div class="partner-badge">Red Hat</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CHIFFRES CLES ============== -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-count="120">0</div>
+          <div class="stat-label">Projets livrés</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="15">0</div>
+          <div class="stat-label">Collaborateurs</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="5">0</div>
+          <div class="stat-label">Pays couverts</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="8">0</div>
+          <div class="stat-label">Années d'expérience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CTA ============== -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Envie de rejoindre l'aventure ?</h2>
+      <p>Que vous soyez un client potentiel, un futur partenaire ou un talent qui cherche sa place, parlons-en.</p>
+      <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="logo-icon">P</div>
+            <span>Perfect<span style="color:var(--color-accent)">Lab</span></span>
+          </div>
+          <p>Votre partenaire infrastructure IT au Togo et en Afrique de l'Ouest. Nous concevons et exploitons des systèmes d'information robustes, sécurisés et évolutifs.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Infrastructure</a></li>
+            <li><a href="services.html">Messagerie</a></li>
+            <li><a href="services.html">Cybersécurité</a></li>
+            <li><a href="services.html">Cloud</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>Boulevard du 13 Janvier</li>
+            <li>Lomé, Togo</li>
+            <li><a href="mailto:contact@perfectlab.tg">contact@perfectlab.tg</a></li>
+            <li><a href="tel:+22890000000">+228 90 00 00 00</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="current-year">2026</span> PerfectLab. Tous droits réservés. Conçu et hébergé au Togo.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
